@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Buy order{% endblock %}
+{% load static %}
+{% block content %}
+
+    <h1>Order № {{ order_id }}</h1>
+
+    {% if items %}   
+    <table class="table table-secondary mt-3">
+        <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Currency</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in items %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.currency }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    {% endif %}
+
+    <div class="col-md-6 offset-md-6">              
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+            Buy
+        </button>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'main.js' %}" defer data-id="{{ order_id }}"></script>
+    
+{% endblock %}
