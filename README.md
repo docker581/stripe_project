@@ -26,6 +26,7 @@ git clone https://github.com/docker581/stripe_project
 ```
 
 ### Пример файла .env
+```bash
 STRIPE_PUBLISHABLE_KEY=pk_test_...
 STRIPE_SECRET_KEY=sk_test_...
 DOMAIN_URL=http://127.0.0.1/
@@ -36,6 +37,7 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 DB_HOST=db 
 DB_PORT=5432
+```
 
 В случае, когда используется не локальный сервер, помимо переменной окружения DOMAIN_URL
 нужно также изменить строку в nginx/default.conf:
