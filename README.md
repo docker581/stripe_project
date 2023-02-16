@@ -62,8 +62,9 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 
 ## Функционал
-GET /buy/{id} - получение Stripe Session Id для оплаты выбранного Order
-GET /order/{id} - получение HTML-страницы с выбранным Order и кнопкой Buy, в дальнейшем - редирект на Stripe Checkout
+- GET /buy/{id} - получение Stripe Session Id для оплаты выбранного Order
+- GET /order/{id} - получение HTML-страницы с выбранным Order и кнопкой Buy, в дальнейшем - редирект на Stripe Checkout
+
 Заказы (Order) и Единицы товаров (Item) создаются в админке.
 
 ## Автор
